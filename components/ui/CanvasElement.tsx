@@ -3,7 +3,6 @@ import { Canvas, useFrame, useLoader } from '@react-three/fiber'
 import { Environment, OrbitControls } from '@react-three/drei'
 import * as THREE from 'three';
 import React, { Suspense } from 'react'
-import { RGBELoader } from 'three/examples/jsm/Addons.js';
 import { Loader2 } from 'lucide-react';
 
 const SphereComponent = ({ text }: { text: string }) => {

@@ -23,8 +23,6 @@ import {
   Calendar,
   Eye,
   Play,
-  Star,
-  Award,
   Volume2,
   VolumeX,
 } from "lucide-react"
@@ -69,10 +67,10 @@ export default function VillaLanding() {
     { icon: Camera, label: "Security System" },
   ]
 
-  const highlights = [
-    { icon: Award, label: "Luxury Property Award 2024" },
-    { icon: Star, label: "5-Star Rated Location" },
-  ]
+  // const highlights = [
+  //   { icon: Award, label: "Luxury Property Award 2024" },
+  //   { icon: Star, label: "5-Star Rated Location" },
+  // ]
 
   // Loading sequence
   useEffect(() => {
@@ -407,7 +405,7 @@ export default function VillaLanding() {
 
           {/* Loading Steps Indicator */}
           <div className="flex justify-center space-x-2">
-            {[20, 40, 60, 80, 100].map((step, index) => (
+            {[20, 40, 60, 80, 100].map((step) => (
               <div
                 key={step}
                 className={`w-2 h-2 rounded-full transition-all duration-500 ${loadingProgress >= step
