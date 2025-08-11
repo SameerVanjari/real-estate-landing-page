@@ -5,7 +5,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+// import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
 import {
@@ -22,7 +22,7 @@ import {
   Mail,
   Calendar,
   Eye,
-  Play,
+  // Play,
   Volume2,
   VolumeX,
 } from "lucide-react"
@@ -30,7 +30,7 @@ import CanvasElement from "@/components/ui/CanvasElement"
 
 export default function VillaLanding() {
   const [selectedImage, setSelectedImage] = useState(0)
-  const [showVirtualTour, setShowVirtualTour] = useState(false)
+  // const [showVirtualTour, setShowVirtualTour] = useState(false)
   const [showLightbox, setShowLightbox] = useState(false)
   const [lightboxImage, setLightboxImage] = useState(0)
   const [zoomLevel, setZoomLevel] = useState(1)
@@ -646,7 +646,7 @@ export default function VillaLanding() {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <Dialog open={showVirtualTour} onOpenChange={setShowVirtualTour}>
+                  {/* <Dialog open={showVirtualTour} onOpenChange={setShowVirtualTour}>
                     <DialogTrigger asChild>
                       <Button
                         size="lg"
@@ -672,7 +672,15 @@ export default function VillaLanding() {
                         </div>
                       </div>
                     </DialogContent>
-                  </Dialog>
+                  </Dialog> */}
+                  <Button
+                    size="lg"
+                    onClick={() => openLightbox(selectedImage)}
+                    className="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white border border-white/30 px-8 py-6 text-lg rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
+                  >
+                    <Eye className="h-6 w-6 mr-3" />
+                    Virtual Tour
+                  </Button>
 
                   <Button
                     variant="outline"
@@ -748,7 +756,7 @@ export default function VillaLanding() {
             </div>
 
             {/* Property Features */}
-            <div className="grid md:grid-cols-4 gap-8 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
               {features.map((feature, index) => (
                 <div key={index} className="text-center space-y-3">
                   <div className="flex justify-center">
